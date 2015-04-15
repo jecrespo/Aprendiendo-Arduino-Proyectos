@@ -3,6 +3,8 @@
 // Proyecto 1 – Estación meteorológica.
 
 #include <LiquidCrystal.h>
+#include <SPI.h>
+#include <Ethernet.h>
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 const int sensorPin = A0;
@@ -11,10 +13,29 @@ boolean switchState;
 boolean pulsado = false;
 int valorMostrado = 0;	//solo puede valer 0, 1 o 2 para normal, máxima o mínima
 unsigned long tiempoPulsado;
+String fecha = "";
 
 float temperature;
 float maxt = -40;
 float mint = 150;
+
+//Configuración IP
+byte mac[] = {
+  0x90, 0xA2, 0xDA, 0x0F, 0xE6, 0x29
+};
+byte ip[] = {
+  192, 168, 1, 152
+};
+byte DNS[] = {
+  8, 8, 8, 8
+};
+byte gateway[] = {
+  192, 168, 1, 1
+};
+byte subnet[] = {
+  255, 255, 255, 0
+};
+char server[] = "aemet.es";
 
 void setup()
 {
@@ -25,6 +46,7 @@ void setup()
   Serial.println("LCD: Iniciando...");
   pinMode(botonPin, INPUT_PULLUP);
   switchState = digitalRead(botonPin);  //Inicializo el estado del boton
+  Ethernet.begin(mac, ip, DNS, gateway, subnet);
 }
 
 void loop()
@@ -41,7 +63,8 @@ void loop()
   //Muestro por pantalla el valor actualizado de la temperatura
   if (valorMostrado == 0) {
     muestraValor(valorMostrado);
-    delay(1000);  //Para evitar parpadeo en pantalla.
+    fecha = recogeDatosWeb();
+    //delay(1000);  //Para evitar parpadeo en pantalla.
   }
 
   //Compruebo si se pulsa el botón y muestro por pantalla lo correspondiente
@@ -79,11 +102,14 @@ void muestraValor(int valor) {
     case 0:
       lcd.clear();
       lcd.home();
-      lcd.print("Temperatura Actual:");
+      lcd.print(fecha);
       lcd.setCursor(0, 1);
+      lcd.print("Temperatura Actual: ");
       lcd.print(temperature);
       lcd.print("ºC");
-      Serial.print("LCD: Temperatura Actual:");
+      Serial.print("LCD: ");
+      Serial.println(fecha);
+      Serial.print("LCD: Temperatura Actual: ");
       Serial.print(temperature);
       Serial.println(" C");
       break;
@@ -120,4 +146,45 @@ void resetValores() {
   lcd.home();
   lcd.print("Valores Reseteados");
   Serial.println("LCD: Valores Reseteados");
+}
+
+String recogeDatosWeb() {
+  EthernetClient client;
+  String dato;
+  if (client.connect(server, 80)) {
+    String webString = "";
+    Serial.println("connected");
+    client.println("GET /xml/municipios/localidad_26089.xml HTTP/1.1");
+    client.println("Host: www.aemet.es");
+    client.println("Cache-Control: no-cache");
+    client.println();
+    while (client.available() == 0) {
+      //No hago nada hasta que me responde
+    }
+
+    do {
+      char c = client.read();
+      Serial.print(c);
+      webString += c;
+      if (webString.lastIndexOf("<prob_precipitacion") > 0) {
+        dato = webString.substring(webString.lastIndexOf("dia fecha=") + 11, webString.lastIndexOf("dia fecha=") + 21);
+        Serial.println();
+        Serial.println("Fecha detectada");
+        Serial.println(dato);
+        break;
+      }
+    }  while (client.available() > 0);
+
+    Serial.println("disconnecting.");
+    client.flush();
+    client.stop();
+    Serial.println("disconnected.");
+    return dato;
+
+  }
+  else {
+    Serial.println("connection failed");
+    return "fallo conexión";
+  }
+
 }
