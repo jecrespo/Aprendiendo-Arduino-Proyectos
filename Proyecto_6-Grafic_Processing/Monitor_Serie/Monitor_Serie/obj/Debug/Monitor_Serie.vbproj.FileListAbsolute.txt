@@ -1,0 +1,14 @@
+c:\users\ecrespo\documents\visual studio 2013\Projects\Monitor_Serie\Monitor_Serie\bin\Debug\Monitor_Serie.exe.config
+c:\users\ecrespo\documents\visual studio 2013\Projects\Monitor_Serie\Monitor_Serie\bin\Debug\Monitor_Serie.exe
+c:\users\ecrespo\documents\visual studio 2013\Projects\Monitor_Serie\Monitor_Serie\bin\Debug\Monitor_Serie.pdb
+c:\users\ecrespo\documents\visual studio 2013\Projects\Monitor_Serie\Monitor_Serie\bin\Debug\Monitor_Serie.xml
+c:\users\ecrespo\documents\visual studio 2013\Projects\Monitor_Serie\Monitor_Serie\obj\Debug\Monitor_Serie.Form1.resources
+c:\users\ecrespo\documents\visual studio 2013\Projects\Monitor_Serie\Monitor_Serie\obj\Debug\Monitor_Serie.Resources.resources
+c:\users\ecrespo\documents\visual studio 2013\Projects\Monitor_Serie\Monitor_Serie\obj\Debug\Monitor_Serie.vbproj.GenerateResource.Cache
+c:\users\ecrespo\documents\visual studio 2013\Projects\Monitor_Serie\Monitor_Serie\obj\Debug\Monitor_Serie.exe
+c:\users\ecrespo\documents\visual studio 2013\Projects\Monitor_Serie\Monitor_Serie\obj\Debug\Monitor_Serie.xml
+c:\users\ecrespo\documents\visual studio 2013\Projects\Monitor_Serie\Monitor_Serie\obj\Debug\Monitor_Serie.pdb
+C:\Users\ecrespo\Dropbox\Compartido_Copias\GITHUB jecrespo\Aprendiendo Arduino Proyectos\Proyecto_6-Grafic_Processing\Monitor_Serie\Monitor_Serie\bin\Debug\Monitor_Serie.exe.config
+C:\Users\ecrespo\Dropbox\Compartido_Copias\GITHUB jecrespo\Aprendiendo Arduino Proyectos\Proyecto_6-Grafic_Processing\Monitor_Serie\Monitor_Serie\obj\Debug\Monitor_Serie.exe
+C:\Users\ecrespo\Dropbox\Compartido_Copias\GITHUB jecrespo\Aprendiendo Arduino Proyectos\Proyecto_6-Grafic_Processing\Monitor_Serie\Monitor_Serie\obj\Debug\Monitor_Serie.xml
+C:\Users\ecrespo\Dropbox\Compartido_Copias\GITHUB jecrespo\Aprendiendo Arduino Proyectos\Proyecto_6-Grafic_Processing\Monitor_Serie\Monitor_Serie\obj\Debug\Monitor_Serie.pdb
