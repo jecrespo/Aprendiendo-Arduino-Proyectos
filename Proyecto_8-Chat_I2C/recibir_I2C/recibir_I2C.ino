@@ -1,5 +1,5 @@
 /*Tutorial Arduino -I2C
-Autor:Toni Ruiz Sastre 
+Autor:Toni Ruiz Sastre
 www.electroensaimada.com
 */
 
@@ -22,11 +22,11 @@ void loop()
 //Interrupcion de dato recibido i2c
 void receiveEvent(int howMany)
 {
-    while( Wire.available()>0) // Leemos todo el buffer
+  while ( Wire.available() > 0) // Leemos todo el buffer
   {
-    byte rec = Wire.read(); // almacenamos el byte
-    Serial.print(rec,HEX);         // Lo mostramos por pantalla
+    char rec = (char)Wire.read(); // almacenamos el byte
+    Serial.print(rec);         // Lo mostramos por pantalla
   }
   Serial.println();
-    
+
 }
