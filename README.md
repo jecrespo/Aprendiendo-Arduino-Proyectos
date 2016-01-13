@@ -1,4 +1,7 @@
 # Aprendiendo-Arduino-Proyectos
+
+[![Stories in Ready](https://badge.waffle.io/jecrespo/Aprendiendo-Arduino-Proyectos.svg?label=ready&title=Ready)](http://waffle.io/jecrespo/Aprendiendo-Arduino-Proyectos)
+
 Proyectos del "Curso Arduino Iniciación 2015"
 
 Más información en:
