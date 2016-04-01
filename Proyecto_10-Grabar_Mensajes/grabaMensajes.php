@@ -26,7 +26,7 @@ if (!$conexion || !$seleccionar_bd) {
 	die('Fallo la conexión o la selección de la Base de Datos: ');
 }
 
-$query = "INSERT INTO Datos (Fecha, nombre, mensaje) VALUES (CURRENT_TIMESTAMP, {$nombre}, {$mensaje})";
+$query = "INSERT INTO Mensajes (date, nombre, mensaje) VALUES (CURRENT_TIMESTAMP, '{$nombre}', '{$mensaje}')";
 	
 $result = mysql_query($query,$conexion);
 

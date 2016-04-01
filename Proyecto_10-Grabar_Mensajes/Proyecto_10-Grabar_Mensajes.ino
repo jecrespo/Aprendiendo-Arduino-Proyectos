@@ -1,7 +1,5 @@
 #include <Ethernet.h>
 #include <SPI.h>
-#include "Timer.h"
-
 
 byte mac[] = { 
   0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
@@ -17,49 +15,64 @@ byte raspberry[] = {
   192,168,1,169}; 
 
 EthernetClient client;
-Timer t;
 String webString = "";
+String nombre = "";
+String mensaje = "";
 
 void setup()
 {
   Ethernet.begin(mac, ip, DNS, gateway, subnet);
   Serial.begin(9600);
   delay(1000);
-  t.every(5000,grabaDatos);
+  Serial.println("Manda un mensaje al servidor.");
+  Serial.println("Introduce Nombre:");
+  while (Serial.available() == 0){
+  }
+  do{
+    char caracter_leido = Serial.read();
+    nombre += caracter_leido;
+    delay(5);
+  }  while (Serial.available() > 0);
+  
+  Serial.println("Introduce Mensaje:");
+  while (Serial.available() == 0){
+  }
+  do{
+    char caracter_leido = Serial.read();
+    mensaje += caracter_leido;
+    delay(5);
+  }  while (Serial.available() > 0);
+  grabaDatos();
+  
+  while (client.available() == 0){
+  }
+  Serial.println("Respuesta del Servidor---->");
+  do{
+	char c = client.read();
+    webString += c;
+  }  while (client.available() > 0);
+  Serial.println(webString);
+  if (webString.endsWith("GRABADOS") == true) Serial.println("Datos guardados correctamente");
+  else Serial.println("Error al guardar los datos");
+   
+  client.stop();
 }
 
 void loop()
 {
-  webString = "";
-  t.update();
-  if (client.available()) {
-    Serial.println("Respuesta del Servidor---->");
-    while (client.available()){
-      char c = client.read();
-      webString += c;
-    }
-    Serial.println(webString);
-    if (webString.endsWith("GRABADOS") == true) Serial.println("Datos guardados correctamente");
-    else Serial.println("Error al guardar los datos");
-    
-   client.stop();
-  }
+
 }
 
 void grabaDatos(){
-  Serial.println("leyendo temperatura... ");
-  int sensorVal = analogRead(A0);
-  float voltage = (sensorVal/1024.0)*5.0;
-  float temperature = (voltage - 0.5)*100;
-  Serial.print("Leido: ");
-  Serial.print(temperature);
-  Serial.println(" grados");
+  Serial.println("enviando mensaje... ");
   
   Serial.println("connecting to server...");
   if (client.connect(raspberry, 80)) {
     Serial.println("connected");
-    client.print("GET /grabaDatos.php?arduino=99&temperatura=");
-    client.print(temperature);
+    client.print("GET /grabaMensajes.php?nombre=");
+    client.print(nombre);
+	client.print("&mensaje=");
+	client.print(mensaje);
     client.println(" HTTP/1.1");
     client.println("Host: arduino");
     client.println("Connection: close");

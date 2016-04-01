@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mensajes Arduino</title>
+<LINK REL="stylesheet" TYPE="text/css" HREF="table_style.css">
+<script type="text/javascript">
+function update() {
+  var xhttp;
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+	  document.getElementById("mensajes").innerHTML=xhttp.responseText;
+    }
+  };
+  xhttp.open("GET", "leeMensajes.php", true);
+  xhttp.send();   
+}
+var id_interval = setInterval('update()',1000);
+</script>
+</head>
+<body>
+<h3>Ultimos 20 Mensajes Recibidos</h3>
+<div class="CSSTableGenerator" id="mensajes">
+</div> 
+</body>
+</html>
