@@ -14,7 +14,10 @@ if (!$conexion || !$seleccionar_bd) {
 	die('Fallo la conexión o la selección de la Base de Datos: ');
 }
 
-$query = "SELECT date,nombre,mensaje FROM  Mensajes ORDER BY date DESC LIMIT 20";
+$hoy = date ("Y-n-d H:i:s");
+$ayer = strtotime($hoy)-86400;
+$ayer = date("Y-n-d H:i:s",$ayer);
+$query = "SELECT date,nombre,mensaje FROM  Mensajes WHERE date > '$ayer' ORDER BY date DESC LIMIT 20";
 	
 $result = mysql_query($query,$conexion);
 	

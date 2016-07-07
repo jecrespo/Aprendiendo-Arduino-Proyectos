@@ -51,7 +51,7 @@ void setup()
     mensaje += caracter_leido;
     delay(5);
   }  while (Serial.available() > 0);
-  serial.println(mensaje);
+  Serial.println(mensaje);
 
   grabaDatos();
   delay(200);
@@ -64,10 +64,10 @@ void loop()
     Serial.println("Respuesta del Servidor---->");
     while (client.available()) {
       char c = client.read();
-      webString += c
+      webString += c;
     }
     Serial.println(webString);
-    if (webString.endsWith("GRABADOS") == true) Serial.println("Datos guardados correctamente");
+    if (webString.indexOf("GRABADOS") >= 0) Serial.println("Datos guardados correctamente");
     else Serial.println("Error al guardar los datos");
 
     client.stop();
@@ -81,7 +81,7 @@ void grabaDatos() {
   Serial.println("connecting to server...");
   if (client.connect(raspberry, 80)) {
     Serial.println("connected");
-    client.print("GET /servicio/grabaMensajes.php?nombre=");
+    client.print("GET /servicios/grabaMensajes.php?nombre=");
     client.print(nombre);
     client.print("&mensaje=");
     client.print(mensaje);
