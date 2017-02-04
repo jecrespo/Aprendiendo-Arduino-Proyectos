@@ -196,15 +196,4 @@ void loop() {
       }
     }
   }
-
-
-
-
-  //si clave entonces sonido alternativo
-  //texto bomba desactivada
-
-  //pin 10 y 11 leds
-
-  //tic tac con el buzzer pin8
-
 }
