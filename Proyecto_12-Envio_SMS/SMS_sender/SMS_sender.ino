@@ -62,8 +62,8 @@ void loop() {
   if (client.connect(server, 80)) {
     Serial.println("connected");
     // Make a HTTP request:
-    client.println("GET /sendSMS/getsms.php HTTP/1.1");
-    client.println("Host: server_name");
+    client.println("GET /servicios//SMS/getsms.php HTTP/1.1");
+    client.println("Host: www.aprendiendoarduino.com");
     client.println("Connection: close");
     client.println();
 
@@ -80,7 +80,7 @@ void loop() {
     Serial.print("Response time (seg): ");
     Serial.println(wait_time / 10);
 
-    if (client.available()) {
+    if (client.available()>0) {
       String response = "";
       while (client.available()) {
         response += (char)client.read();
