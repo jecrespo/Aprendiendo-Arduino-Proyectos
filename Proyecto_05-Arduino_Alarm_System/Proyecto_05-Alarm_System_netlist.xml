@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<netlist date="ma. jun. 19 10:36:04 2018" sketch="Proyecto_05-Alarm_System.fzz">
+ <net>
+  <connector id="connector0" name="Pin 0">
+   <part label="R3" title="220Ω Resistor" id="854373620"/>
+  </connector>
+  <connector id="connector1" name="Pin 1">
+   <part label="R3" title="220Ω Resistor" id="854373620"/>
+  </connector>
+  <connector id="connector1" name="anode">
+   <part label="LED1" title="Red (633nm) LED" id="58550"/>
+  </connector>
+  <connector id="connector64" name="D3 PWM">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector1" name="pin2">
+   <part label="J1" title="Piezo Speaker" id="58210"/>
+  </connector>
+  <connector id="connector66" name="D5 PWM">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector0" name="pin1">
+   <part label="J1" title="Piezo Speaker" id="58210"/>
+  </connector>
+  <connector id="connector57" name="GND">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector0" name="Pin 1">
+   <part label="S1" title="Tilt Switch" id="58520"/>
+  </connector>
+  <connector id="connector88" name="GND">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector89" name="GND">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector1" name="Pin 1">
+   <part label="R1" title="10kΩ Resistor" id="854367900"/>
+  </connector>
+  <connector id="connector0" name="cathode">
+   <part label="LED1" title="Red (633nm) LED" id="58550"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector63" name="D2">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector1" name="Pin 2">
+   <part label="S1" title="Tilt Switch" id="58520"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector67" name="D6 PWM">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector1" name="1">
+   <part label="KEYPAD1" title="Membrane Matrix Keypad" id="854358580"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector68" name="D7">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector2" name="2">
+   <part label="KEYPAD1" title="Membrane Matrix Keypad" id="854358580"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector55" name="D12/MISO">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector3" name="3">
+   <part label="KEYPAD1" title="Membrane Matrix Keypad" id="854358580"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector54" name="D11 PWM/MOSI">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector4" name="4">
+   <part label="KEYPAD1" title="Membrane Matrix Keypad" id="854358580"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector53" name="D10 PWM/SS">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector5" name="5">
+   <part label="KEYPAD1" title="Membrane Matrix Keypad" id="854358580"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector52" name="D9 PWM">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector6" name="6">
+   <part label="KEYPAD1" title="Membrane Matrix Keypad" id="854358580"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector51" name="D8">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector7" name="7">
+   <part label="KEYPAD1" title="Membrane Matrix Keypad" id="854358580"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector65" name="D4">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector87" name="5V">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector0" name="pin 0">
+   <part label="R2" title="Photocell (LDR)" id="854369860"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector0" name="A0">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector1" name="pin 1">
+   <part label="R2" title="Photocell (LDR)" id="854369860"/>
+  </connector>
+  <connector id="connector0" name="Pin 0">
+   <part label="R1" title="10kΩ Resistor" id="854367900"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector2" name="2">
+   <part label="S2" title="SWITCH-MOMENTARY-2" id="854365300"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector3" name="1">
+   <part label="S2" title="SWITCH-MOMENTARY-2" id="854365300"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector62" name="D1/TX">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector1" name="A1">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector5" name="A5/SCL">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector60" name="A5/SCL">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector61" name="D0/RX">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector4" name="A4/SDA">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+  <connector id="connector59" name="A4/SDA">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector90" name="VIN">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector86" name="3V3">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector3" name="A3">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector56" name="D13/SCK">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector58" name="AREF">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector84" name="ioref">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector91" name="N/C">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector85" name="RESET">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector2" name="A2">
+   <part label="Componente1" title="Arduino Uno (Rev3)" id="58180"/>
+  </connector>
+ </net>
+</netlist>
